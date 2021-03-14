@@ -8,12 +8,6 @@ namespace WebToanHoc.Models
 
     public partial class tbl_category
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tbl_category()
-        {
-            tbl_file = new HashSet<tbl_file>();
-        }
-
         [Key]
         public int id_cate { get; set; }
 
@@ -23,8 +17,5 @@ namespace WebToanHoc.Models
         public int? id_subject { get; set; }
 
         public virtual tbl_subject tbl_subject { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tbl_file> tbl_file { get; set; }
     }
 }
