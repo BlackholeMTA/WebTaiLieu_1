@@ -171,7 +171,7 @@ namespace WebToanHoc.Areas.Admin.Controllers
             }
             else
             {
-                int id = Convert.ToInt32(Request.Url.Segments[5]);
+                int id = Convert.ToInt32(Request.Url.Segments[3]);
                 var doc = db.tbl_file.Where(x => x.id_doc == id).FirstOrDefault();
                 ViewBag.document = doc;
 
