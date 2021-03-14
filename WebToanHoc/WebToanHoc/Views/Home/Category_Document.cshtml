@@ -13,12 +13,12 @@
      <section class="container">
           <ul class="b-crumbs">
                <li>
-                    <a href="/Home/Index">
+                    <a href="/trang-chu">
                          Trang chủ
                     </a>
                </li>
                <li>
-                    <a href="/Home/Category_Document">
+                    <a href="/">
                          Danh mục
                     </a>
                </li>
@@ -36,7 +36,7 @@
                          @foreach (var item in list_class)
                          {
                               <li class="categ-1">
-                                   <a href="/Home/Category_Document/@item.id_cate">
+                                   <a href="/danh-muc/@item.cate_name.Replace(' ','-')/@item.id_cate">
                                         <span class="categ-1-label">@item.cate_name</span>
                                    </a>
                               </li>
@@ -60,7 +60,7 @@
                     <!-- View Mode -->
                     <ul class="section-mode">
                          <li class="section-mode-gallery active">
-                              <a title="View mode: Gallery" href="/Home/Category_Document/"></a>
+                              <a title="View mode: Gallery" href="/"></a>
                          </li>
                          @*<li class="section-mode-list">
                               <a title="View mode: List" href="#"></a>
@@ -104,7 +104,7 @@
                     {
                          <div class="prod-i">
                               <div class="prod-i-top">
-                                   <a href="/Home/Detail_Document/@item.id_doc" class="prod-i-img">
+                                   <a href="/@item.file_name.Replace(' ','-')/@item.id_doc" class="prod-i-img">
                                         <!-- NO SPACE --><img src="~/Content/Asset/lib_binh/img/color/tailieu.png" alt="Adipisci aperiam commodi">
                                         <!-- NO SPACE -->
                                    </a>
@@ -113,7 +113,7 @@
                                         <a href="#" class="qview-btn prod-i-qview"><span>Xem nhanh</span><i class="fa fa-search"></i></a>
                                         <a class="prod-i-compare" href="#"><span>So sánh</span><i class="fa fa-bar-chart"></i></a>
                                    </p>
-                                   <a href="/Home/Detail_Document/@item.id_doc" class="prod-i-buy">Chi tiết</a>
+                                   <a href="/@item.file_name.Replace(' ','-')/@item.id_doc" class="prod-i-buy">Chi tiết</a>
                                    <p class="prod-i-properties-label"><i class="fa fa-info"></i></p>
 
                                    <div class="prod-i-properties">
@@ -125,7 +125,7 @@
                                    </div>
                               </div>
                               <h3>
-                                   <a href="/Home/Detail_Document/@item.id_doc">@item.file_name</a>
+                                   <a href="/@item.file_name.Replace(' ','-')/@item.id_doc">@item.file_name</a>
                               </h3>
                               <p class="prod-i-price">
                                    <b>Miễn phí</b>

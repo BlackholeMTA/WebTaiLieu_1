@@ -74,7 +74,7 @@
                               {
                                    <li class="prod-i">
                                         <div class="prod-i-top">
-                                             <a href="/Home/Detail_Document/@doc.id_doc" class="prod-i-img">
+                                             <a href="@doc.file_name.Replace(' ','-')/@doc.id_doc" class="prod-i-img">
                                                   <!-- NO SPACE --><img src="~/Content/Asset/lib_binh//img/color/tailieu.png" alt="">
                                                   <!-- NO SPACE -->
                                              </a>
@@ -88,7 +88,8 @@
                                              </p>
                                         </div>
                                         <h3>
-                                             <a href="/Home/Detail_Document/@doc.id_doc">@doc.file_name</a>
+
+                                             <a href="/@doc.file_name.Replace(' ','-')/@doc.id_doc">@doc.file_name</a>
                                         </h3>
                                         <p class="prod-i-price">
                                              <b>Free</b>
@@ -116,7 +117,7 @@
                               {
                                    <li class="prod-i">
                                         <div class="prod-i-top">
-                                             <a href="/Home/Detail_Document/@doc.id_doc" class="prod-i-img">
+                                             <a href="/@doc.file_name.Replace(' ','-')/@doc.id_doc" class="prod-i-img">
                                                   <!-- NO SPACE --><img src="~/Content/Asset/lib_binh//img/color/tailieu.png" alt="">
                                                   <!-- NO SPACE -->
                                              </a>
@@ -130,7 +131,7 @@
                                              </p>
                                         </div>
                                         <h3>
-                                             <a href="/Home/Detail_Document/@doc.id_doc">@doc.file_name</a>
+                                             <a href="/@doc.file_name.Replace(' ','-')/@doc.id_doc">@doc.file_name</a>
                                         </h3>
                                         <p class="prod-i-price">
                                              <b>Free</b>
@@ -158,7 +159,7 @@
                               {
                                    <li class="prod-i">
                                         <div class="prod-i-top">
-                                             <a href="/Home/Detail_Document/@doc.id_doc" class="prod-i-img">
+                                             <a href="/@doc.file_name.Replace(' ','-')/@doc.id_doc" class="prod-i-img">
                                                   <!-- NO SPACE --><img src="~/Content/Asset/lib_binh//img/color/tailieu.png" alt="">
                                                   <!-- NO SPACE -->
                                              </a>
@@ -172,7 +173,7 @@
                                              </p>
                                         </div>
                                         <h3>
-                                             <a href="/Home/Detail_Document/@doc.id_doc">@doc.file_name</a>
+                                             <a href="/@doc.file_name.Replace(' ','-')/@doc.id_doc">@doc.file_name</a>
                                         </h3>
                                         <p class="prod-i-price">
                                              <b>Free</b>
@@ -198,7 +199,7 @@
                               {
                                    <li class="prod-i">
                                         <div class="prod-i-top">
-                                             <a href="/Home/Detail_Document/@doc.id_doc" class="prod-i-img">
+                                             <a href="/@doc.file_name.Replace(' ','-')/@doc.id_doc" class="prod-i-img">
                                                   <!-- NO SPACE --><img src="~/Content/Asset/lib_binh//img/color/tailieu.png" alt="">
                                                   <!-- NO SPACE -->
                                              </a>
@@ -212,7 +213,7 @@
                                              </p>
                                         </div>
                                         <h3>
-                                             <a href="/Home/Detail_Document/@doc.id_doc">@doc.file_name</a>
+                                             <a href="/@doc.file_name.Replace(' ','-')/@doc.id_doc">@doc.file_name</a>
                                         </h3>
                                         <p class="prod-i-price">
                                              <b>Free</b>
@@ -245,11 +246,11 @@
                          @foreach (var doc in list_download)
                          {
                               <li class="discounts-i">
-                                   <a href="/Home/Detail_Document" class="discounts-i-img">
+                                   <a href="/@doc.file_name.Replace(' ','-')/@doc.id_doc" class="discounts-i-img">
                                         <img src="~/Content/Asset/lib_binh/img/color/tailieu.png" alt="">
                                    </a>
                                    <h3 class="discounts-i-ttl">
-                                        <a href="/Home/Detail_Document/@doc.id_doc">@doc.file_name</a>
+                                        <a href="/@doc.file_name.Replace(' ','-')/@doc.id_doc">@doc.file_name</a>
                                    </h3>
                                    <p class="discounts-i-price">
                                         <b>Free</b>
@@ -277,7 +278,7 @@
                          <div class="posts-i-info">
                               <a href="#" class="posts-i-ctg">Đánh giá</a>
                               <h3 class="posts-i-ttl">
-                                   <a href="/Home/Index">Đề thi toán đại học</a>
+                                   <a href="/trang-chu">Đề thi toán đại học</a>
                               </h3>
                          </div>
                     </div>
@@ -408,7 +409,7 @@
           <!-- Quick View Product - start -->
           <div class="qview-modal">
                <div class="prod-wrap">
-                    <a href="/Home/Detail_Document">
+                    <a href="/">
                          <h1 class="main-ttl">
                               <span>Reprehenderit adipisci</span>
                          </h1>

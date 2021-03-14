@@ -23,7 +23,7 @@ namespace WebToanHoc.Controllers
                ViewBag.list_download=db.tbl_file.Where(x=>x.status==1).OrderByDescending(x => x.num_view).ToList().Take(6);
                return View();
           }
-          public ActionResult Category_Document(int id=1)
+          public ActionResult Category_Document(int id)
           {                         
                //lấy danh sách theo lớp
                var listDoc_cate = db.tbl_file.Where(x => x.status == 1 && x.id_cate == id).ToList();
@@ -49,7 +49,8 @@ namespace WebToanHoc.Controllers
                }
                return View();
           }
-          public ActionResult Detail_Document(int id=1)
+        //public ActionResult Detail_Document(int id = 1)
+          public ActionResult Detail_Document(int id)
           {
                //lấy thông tin tài liệu có id cho trước
                var document = db.tbl_file.Where(x => x.id_doc == id).FirstOrDefault();
