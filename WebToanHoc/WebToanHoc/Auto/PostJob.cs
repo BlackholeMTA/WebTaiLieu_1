@@ -20,11 +20,11 @@ namespace WebToanHoc.Auto
         {
             //Lấy thời gian
             DateTime aDateTime = DateTime.Now;
-            string date = "";
-            string day = aDateTime.Day.ToString();
-            string month = aDateTime.Month.ToString();
-            string year = aDateTime.Year.ToString();
-            date = day + '-' + month + '-' + year;
+            //string date = "";
+            //string day = aDateTime.Day.ToString();
+            //string month = aDateTime.Month.ToString();
+            //string year = aDateTime.Year.ToString();
+            //date = day + '-' + month + '-' + year;
 
             // job thay đổi status của tài liệu thành active và thêm ngày
             DbContext_WebTaiLieu db = new DbContext_WebTaiLieu();
@@ -38,7 +38,7 @@ namespace WebToanHoc.Auto
                int num= list_number.Next(0, number_docu-1);
                 tbl_file new_file = list_docu[num];
                 new_file.status = 1;
-                new_file.time_up = date;
+                new_file.time_up = aDateTime;
                 db.SaveChanges();
                 
             }

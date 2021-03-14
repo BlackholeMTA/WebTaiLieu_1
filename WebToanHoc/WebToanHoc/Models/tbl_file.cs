@@ -20,8 +20,7 @@ namespace WebToanHoc.Models
 
         public int? status { get; set; }
 
-        [StringLength(50)]
-        public string time_up { get; set; }
+        public DateTime? time_up { get; set; }
 
         public string file_name_sha1 { get; set; }
 
@@ -32,7 +31,5 @@ namespace WebToanHoc.Models
         public int? id_user { get; set; }
 
         public string description { get; set; }
-
-        public virtual tbl_category tbl_category { get; set; }
     }
 }

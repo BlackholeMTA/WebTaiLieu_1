@@ -46,7 +46,7 @@ namespace WebToanHoc.Areas.Admin.Controllers
             var list_docu = new List<list_doc>();
             foreach(var item in docu)
             {
-                var x = new list_doc(item.id_doc, item.file_name, item.cate_name, item.time_up);
+                var x = new list_doc(item.id_doc, item.file_name, item.cate_name, item.time_up.ToString());
                 list_docu.Add(x);
             }
             
@@ -122,7 +122,8 @@ namespace WebToanHoc.Areas.Admin.Controllers
                 new_file.id_cate = Convert.ToInt32(cate);
                 new_file.link_drive = lnk[i];
                 new_file.status = 0;
-                new_file.time_up = "00-00-0000";
+                DateTime aDateTime = DateTime.Now;
+                new_file.time_up = aDateTime;
                 new_file.description = temp_1[0].Replace('-', ' ')+" "+descrip;
                 db.tbl_file.Add(new_file);
 

@@ -3,314 +3,210 @@
      ViewBag.Title = "Detail_Document";
      Layout = "~/Views/Shared/_Layout.cshtml";
      var document = ViewBag.document;
-     var link_preview=document.link_drive+"/preview"; 
-}      
+     var lst1 = ViewBag.lst1;
+     var lst2 = ViewBag.lst2;
+     var link_preview = document.link_drive + "/preview";
+}
 
-     <main>
-          <section class="container">
+<main>
+     <section class="container">
 
 
-               <ul class="b-crumbs">
-                    <li>
-                         <a href="/Home/Index">
-                              Trang chủ
-                         </a>
-                    </li>
-                    <li>
-                         <a href="catalog-list.html">
-                              Toán cấp 2
-                         </a>
-                    </li>
-                    <li>
-                         <a href="catalog-list.html">
-                              Toán lớp 9
-                         </a>
-                    </li>
-                    <li>
-                         <span>Ôn thi đồ thị</span>
-                    </li>
-               </ul>
-               <h1 class="main-ttl"><span>@document.file_name</span></h1>
-               <!-- Single Product - start -->
-               <div class="prod-wrap">
+          <ul class="b-crumbs">
+               <li>
+                    <a href="/Home/Index">
+                         Trang chủ
+                    </a>
+               </li>
+               <li>
+                    <a href="/Home/Category_Document">
+                         @ViewBag.grade
+                    </a>
+               </li>
+               <li>
+                    <a href="/Home/Category_Document/@ViewBag._idclassGrade">
+                         @ViewBag.classGrade
+                    </a>
+               </li>
+               <li>
+                    <span>@document.file_name</span>
+               </li>
+          </ul>
+          <h1 class="main-ttl"><span>@document.file_name</span></h1>
+          <!-- Single Product - start -->
+          <div class="prod-wrap">
 
-                    <!-- Product Images -->
-                    <iframe src="@link_preview" width="880px" height="912px"></iframe>
+               <!-- Product Images -->
+               <iframe src="@link_preview" width="880px" height="912px"></iframe>
 
-                    <!-- Product Description/Info -->
-                    <!-- Product Tabs -->
-                    <div class="prod-tabs-wrap" style="margin-top:1rem;">
-                         <ul class="prod-tabs">
-                              <li><a data-prodtab-num="1" class="active" href="#" data-prodtab="#prod-tab-1">Mô tả</a></li>
-                              <li><a data-prodtab-num="2" id="prod-props" href="#" data-prodtab="#prod-tab-2">Đặc điểm</a></li>
-                              <li><a data-prodtab-num="4" href="#" data-prodtab="#prod-tab-4">Đánh giá (3)</a></li>
-                              <li><a data-prodtab-num="5" href="#" data-prodtab="#prod-tab-5">Tải xuống (6)</a></li>
-                         </ul>
-                         <div class="prod-tab-cont">
+               <!-- Product Description/Info -->
+               <!-- Product Tabs -->
+               <div class="prod-tabs-wrap" style="margin-top:1rem;">
+                    <ul class="prod-tabs">
+                         <li><a data-prodtab-num="1" class="active" href="#" data-prodtab="#prod-tab-1">Mô tả</a></li>
+                         <li><a data-prodtab-num="2" id="prod-props" href="#" data-prodtab="#prod-tab-2">Đặc điểm</a></li>
+                         <li><a data-prodtab-num="4" href="#" data-prodtab="#prod-tab-4">Đánh giá (3)</a></li>
+                         <li><a data-prodtab-num="5" href="#" data-prodtab="#prod-tab-5">Tải xuống (@document.num_down)</a></li>
+                    </ul>
+                    <div class="prod-tab-cont">
 
-                              <p data-prodtab-num="1" class="prod-tab-mob active" data-prodtab="#prod-tab-1">Mô tả</p>
-                              <div class="prod-tab stylization" id="prod-tab-1">
-                                   <p>
-                                        Quis temporibus hic reprehenderit explicabo odio earum maxime cupiditate mollitia magni laboriosam illum adipisci, ipsam, repellendus optio esse dolorem incidunt debitis eius voluptate expedita assumenda. Praesentium iure inventore
-                                        nostrum corporis illum, est asperiores accusamus, ducimus, accusantium natus illo
-                                   </p>
-                                   <p>
-                                        Ad officiis omnis eaque, tempora quidem, vel, esse quasi qui sed rem provident ea autem accusamus? Aspernatur excepturi rem illo amet sapiente non repellat debitis dignissimos quod, accusamus corrupti consectetur optio maiores,
-                                        sint aliquam. Veniam, non harum voluptate dicta sit porro iste cumque eligendi placeat ea voluptatem deserunt quam quo facere! Libero vitae rem dolore placeat quae, magni voluptate maiores nemo ullam temporibus adipisci
-                                        perferendis laboriosam illo ipsam quia numquam, ipsum delectus at vel error iure aspernatur
-                                   </p>
-                              </div>
-                              <p data-prodtab-num="2" class="prod-tab-mob" data-prodtab="#prod-tab-2">Đặc điểm</p>
-                              <div class="prod-tab prod-props" id="prod-tab-2">
-                                   <table>
-                                        <tbody>
-                                             <tr>
-                                                  <td>SKU</td>
-                                                  <td>05464207</td>
-                                             </tr>
-                                             <tr>
-                                                  <td>Material</td>
-                                                  <td>Nylon</td>
-                                             </tr>
+                         <p data-prodtab-num="1" class="prod-tab-mob active" data-prodtab="#prod-tab-1">Mô tả</p>
+                         <div class="prod-tab stylization" id="prod-tab-1">
+                              <p>
+                                   @document.description
+                              </p>
+                         </div>
+                         <p data-prodtab-num="2" class="prod-tab-mob" data-prodtab="#prod-tab-2">Đặc điểm</p>
+                         <div class="prod-tab prod-props" id="prod-tab-2">
+                              <table>
+                                   <tbody>
+                                        <tr>
+                                             <td>Thể loại:</td>
+                                             <td>Tài liệu</td>
+                                        </tr>
+                                        <tr>
+                                             <td>Dạng:</td>
+                                             <td>Word/PDF</td>
+                                        </tr>
 
-                                        </tbody>
-                                   </table>
-                              </div>
-                              <p data-prodtab-num="4" class="prod-tab-mob" data-prodtab="#prod-tab-4">Đánh giá (3)</p>
-                              <div class="prod-tab" id="prod-tab-4">
-                                   <ul class="reviews-list">
-                                        <li class="reviews-i existimg">
-                                             <div class="reviews-i-img">
-                                                  <img src="http://placehold.it/120x120" alt="Averill Sidony">
-                                                  <div class="reviews-i-rating">
-                                                       <i class="fa fa-star"></i>
-                                                       <i class="fa fa-star"></i>
-                                                       <i class="fa fa-star"></i>
-                                                       <i class="fa fa-star"></i>
-                                                       <i class="fa fa-star"></i>
-                                                  </div>
-                                                  <time datetime="2017-12-21 12:19:46" class="reviews-i-date">11/3/2021</time>
+                                   </tbody>
+                              </table>
+                         </div>
+                         <p data-prodtab-num="4" class="prod-tab-mob" data-prodtab="#prod-tab-4">Đánh giá (3)</p>
+                         <div class="prod-tab" id="prod-tab-4">
+                              <ul class="reviews-list">
+                                   <li class="reviews-i existimg">
+                                        <div class="reviews-i-img">
+                                             <img src="http://placehold.it/120x120" alt="Averill Sidony">
+                                             <div class="reviews-i-rating">
+                                                  <i class="fa fa-star"></i>
+                                                  <i class="fa fa-star"></i>
+                                                  <i class="fa fa-star"></i>
+                                                  <i class="fa fa-star"></i>
+                                                  <i class="fa fa-star"></i>
                                              </div>
-                                             <div class="reviews-i-cont">
-                                                  <p>
-                                                       Quá tuyệt vời
-                                                       <span class="reviews-i-margin"></span>
-                                                       <h3 class="reviews-i-ttl">Đỗ Văn Hoàng</h3>
-                                                  <p class="reviews-i-showanswer"><span data-open="Show answer" data-close="Hide answer">Hiện câu trả lời</span> <i class="fa fa-angle-down"></i></p>
-                                             </div>
-                                             <div class="reviews-i-answer">
-                                                  <p>Cảm ơn bạn.</p>
+                                             <time datetime="2017-12-21 12:19:46" class="reviews-i-date">11/3/2021</time>
+                                        </div>
+                                        <div class="reviews-i-cont">
+                                             <p>
+                                                  Quá tuyệt vời
                                                   <span class="reviews-i-margin"></span>
+                                                  <h3 class="reviews-i-ttl">Đỗ Văn Hoàng</h3>
+                                             <p class="reviews-i-showanswer"><span data-open="Show answer" data-close="Hide answer">Hiện câu trả lời</span> <i class="fa fa-angle-down"></i></p>
+                                        </div>
+                                        <div class="reviews-i-answer">
+                                             <p>Cảm ơn bạn.</p>
+                                             <span class="reviews-i-margin"></span>
+                                        </div>
+                                   </li>
+                                   <li class="reviews-i existimg">
+                                        <div class="reviews-i-img">
+                                             <img src="http://placehold.it/120x120" alt="Averill Sidony">
+                                             <div class="reviews-i-rating">
+                                                  <i class="fa fa-star"></i>
+                                                  <i class="fa fa-star"></i>
+                                                  <i class="fa fa-star"></i>
+                                                  <i class="fa fa-star"></i>
+                                                  <i class="fa fa-star"></i>
                                              </div>
-                                        </li>
-                                        <li class="reviews-i existimg">
-                                             <div class="reviews-i-img">
-                                                  <img src="http://placehold.it/120x120" alt="Averill Sidony">
-                                                  <div class="reviews-i-rating">
-                                                       <i class="fa fa-star"></i>
-                                                       <i class="fa fa-star"></i>
-                                                       <i class="fa fa-star"></i>
-                                                       <i class="fa fa-star"></i>
-                                                       <i class="fa fa-star"></i>
-                                                  </div>
-                                                  <time datetime="2017-12-21 12:19:46" class="reviews-i-date">11/3/2021</time>
-                                             </div>
-                                             <div class="reviews-i-cont">
-                                                  <p>
-                                                       Rất hay và ý nghĩa
-                                                       <span class="reviews-i-margin"></span>
-                                                       <h3 class="reviews-i-ttl">Hoàng Trọng Bình</h3>
-                                                  <p class="reviews-i-showanswer"><span data-open="Show answer" data-close="Hide answer">Hiện câu trả lời</span> <i class="fa fa-angle-down"></i></p>
-                                             </div>
-                                             <div class="reviews-i-answer">
-                                                  <p>Cảm ơn bạn.</p>
+                                             <time datetime="2017-12-21 12:19:46" class="reviews-i-date">11/3/2021</time>
+                                        </div>
+                                        <div class="reviews-i-cont">
+                                             <p>
+                                                  Rất hay và ý nghĩa
                                                   <span class="reviews-i-margin"></span>
+                                                  <h3 class="reviews-i-ttl">Hoàng Trọng Bình</h3>
+                                             <p class="reviews-i-showanswer"><span data-open="Show answer" data-close="Hide answer">Hiện câu trả lời</span> <i class="fa fa-angle-down"></i></p>
+                                        </div>
+                                        <div class="reviews-i-answer">
+                                             <p>Cảm ơn bạn.</p>
+                                             <span class="reviews-i-margin"></span>
+                                        </div>
+                                   </li>
+                              </ul>
+                              <div class="prod-comment-form">
+                                   <h3>Thêm bình luận của bạn</h3>
+                                   <form method="POST" action="#">
+                                        <input type="text" placeholder="Tên">
+                                        <input type="text" placeholder="E-mail">
+                                        <textarea placeholder="Bình luận tại đây"></textarea>
+                                        <div class="prod-comment-submit">
+                                             <input type="submit" value="Gửi">
+                                             <div class="prod-rating">
+                                                  <i class="fa fa-star-o" title="5"></i><i class="fa fa-star-o" title="4"></i><i class="fa fa-star-o" title="3"></i><i class="fa fa-star-o" title="2"></i><i class="fa fa-star-o" title="1"></i>
                                              </div>
-                                        </li>
-                                   </ul>
-                                   <div class="prod-comment-form">
-                                        <h3>Thêm bình luận của bạn</h3>
-                                        <form method="POST" action="#">
-                                             <input type="text" placeholder="Tên">
-                                             <input type="text" placeholder="E-mail">
-                                             <textarea placeholder="Bình luận tại đây"></textarea>
-                                             <div class="prod-comment-submit">
-                                                  <input type="submit" value="Gửi">
-                                                  <div class="prod-rating">
-                                                       <i class="fa fa-star-o" title="5"></i><i class="fa fa-star-o" title="4"></i><i class="fa fa-star-o" title="3"></i><i class="fa fa-star-o" title="2"></i><i class="fa fa-star-o" title="1"></i>
-                                                  </div>
-                                             </div>
-                                        </form>
-                                   </div>
-                              </div>
-                              <p data-prodtab-num="5" class="prod-tab-mob" data-prodtab="#prod-tab-5">Tải xuống (6)</p>
-                              <div class="prod-tab prod-props" id="prod-tab-5">
-                                   <a href="@document.link_drive/view?usp=sharing" target="_blank"><i class="fa fa-download"></i><span style="font-weight: bold;font-size: 20px;">ẤN ĐỂ TẢI</span></a>
+                                        </div>
+                                   </form>
                               </div>
                          </div>
-                    </div>
-
-               </div>
-               <!-- Single Product - end -->
-               <!-- Related Products - start -->
-               <div class="prod-related">
-                    <h2><span>Tài liệu liên quan</span></h2>
-                    <div class="prod-related-car" id="prod-related-car">
-                         <ul class="slides">
-                              <li class="prod-rel-wrap">
-                                   <div class="prod-rel">
-                                        <a href="#" class="prod-rel-img">
-                                             <img src="~/Content/Asset/lib_binh/img/color/tailieu.png" alt="Toán c3">
-                                        </a>
-                                        <div class="prod-rel-cont">
-                                             <h3><a href="#">Thi học kì toán lớp 3</a></h3>
-                                             <p class="prod-rel-price">
-                                                  <b>Miễn phí</b>
-                                             </p>
-                                             <div class="prod-rel-actions">
-                                                  <a title="Yêu thích" href="#" class="prod-rel-favorites"><i class="fa fa-heart"></i></a>
-                                                  <a title="So sánh" href="#" class="prod-rel-compare"><i class="fa fa-bar-chart"></i></a>
-                                                  <p class="prod-i-addwrap">
-                                                       <a title="Tải về" href="#" class="prod-i-add"><i class="fa fa-download"></i></a>
-                                                  </p>
-                                             </div>
-                                        </div>
-                                   </div>
-                                   <div class="prod-rel">
-                                        <a href="#" class="prod-rel-img">
-                                             <img src="~/Content/Asset/lib_binh/img/color/tailieu.png" alt="Toán c3">
-                                        </a>
-                                        <div class="prod-rel-cont">
-                                             <h3><a href="#">Thi học kì toán lớp 3</a></h3>
-                                             <p class="prod-rel-price">
-                                                  <b>Miễn phí</b>
-                                             </p>
-                                             <div class="prod-rel-actions">
-                                                  <a title="Yêu thích" href="#" class="prod-rel-favorites"><i class="fa fa-heart"></i></a>
-                                                  <a title="So sánh" href="#" class="prod-rel-compare"><i class="fa fa-bar-chart"></i></a>
-                                                  <p class="prod-i-addwrap">
-                                                       <a title="Tải về" href="#" class="prod-i-add"><i class="fa fa-download"></i></a>
-                                                  </p>
-                                             </div>
-                                        </div>
-                                   </div>
-                                   <div class="prod-rel">
-                                        <a href="#" class="prod-rel-img">
-                                             <img src="~/Content/Asset/lib_binh/img/color/tailieu.png" alt="Toán c3">
-                                        </a>
-                                        <div class="prod-rel-cont">
-                                             <h3><a href="#">Thi học kì toán lớp 3</a></h3>
-                                             <p class="prod-rel-price">
-                                                  <b>Miễn phí</b>
-                                             </p>
-                                             <div class="prod-rel-actions">
-                                                  <a title="Yêu thích" href="#" class="prod-rel-favorites"><i class="fa fa-heart"></i></a>
-                                                  <a title="So sánh" href="#" class="prod-rel-compare"><i class="fa fa-bar-chart"></i></a>
-                                                  <p class="prod-i-addwrap">
-                                                       <a title="Tải về" href="#" class="prod-i-add"><i class="fa fa-download"></i></a>
-                                                  </p>
-                                             </div>
-                                        </div>
-                                   </div>
-                                   <div class="prod-rel">
-                                        <a href="#" class="prod-rel-img">
-                                             <img src="~/Content/Asset/lib_binh/img/color/tailieu.png" alt="Toán c3">
-                                        </a>
-                                        <div class="prod-rel-cont">
-                                             <h3><a href="#">Thi học kì toán lớp 3</a></h3>
-                                             <p class="prod-rel-price">
-                                                  <b>Miễn phí</b>
-                                             </p>
-                                             <div class="prod-rel-actions">
-                                                  <a title="Yêu thích" href="#" class="prod-rel-favorites"><i class="fa fa-heart"></i></a>
-                                                  <a title="So sánh" href="#" class="prod-rel-compare"><i class="fa fa-bar-chart"></i></a>
-                                                  <p class="prod-i-addwrap">
-                                                       <a title="Tải về" href="#" class="prod-i-add"><i class="fa fa-download"></i></a>
-                                                  </p>
-                                             </div>
-                                        </div>
-                                   </div>
-                              </li>
-                              <li class="prod-rel-wrap">
-                                   <div class="prod-rel">
-                                        <a href="#" class="prod-rel-img">
-                                             <img src="~/Content/Asset/lib_binh/img/color/tailieu.png" alt="Toán c3">
-                                        </a>
-                                        <div class="prod-rel-cont">
-                                             <h3><a href="#">Thi học kì toán lớp 3</a></h3>
-                                             <p class="prod-rel-price">
-                                                  <b>Miễn phí</b>
-                                             </p>
-                                             <div class="prod-rel-actions">
-                                                  <a title="Yêu thích" href="#" class="prod-rel-favorites"><i class="fa fa-heart"></i></a>
-                                                  <a title="So sánh" href="#" class="prod-rel-compare"><i class="fa fa-bar-chart"></i></a>
-                                                  <p class="prod-i-addwrap">
-                                                       <a title="Tải về" href="#" class="prod-i-add"><i class="fa fa-download"></i></a>
-                                                  </p>
-                                             </div>
-                                        </div>
-                                   </div>
-                                   <div class="prod-rel">
-                                        <a href="#" class="prod-rel-img">
-                                             <img src="~/Content/Asset/lib_binh/img/color/tailieu.png" alt="Toán c3">
-                                        </a>
-                                        <div class="prod-rel-cont">
-                                             <h3><a href="#">Thi học kì toán lớp 3</a></h3>
-                                             <p class="prod-rel-price">
-                                                  <b>Miễn phí</b>
-                                             </p>
-                                             <div class="prod-rel-actions">
-                                                  <a title="Yêu thích" href="#" class="prod-rel-favorites"><i class="fa fa-heart"></i></a>
-                                                  <a title="So sánh" href="#" class="prod-rel-compare"><i class="fa fa-bar-chart"></i></a>
-                                                  <p class="prod-i-addwrap">
-                                                       <a title="Tải về" href="#" class="prod-i-add"><i class="fa fa-download"></i></a>
-                                                  </p>
-                                             </div>
-                                        </div>
-                                   </div>
-                                   <div class="prod-rel">
-                                        <a href="#" class="prod-rel-img">
-                                             <img src="~/Content/Asset/lib_binh/img/color/tailieu.png" alt="Toán c3">
-                                        </a>
-                                        <div class="prod-rel-cont">
-                                             <h3><a href="#">Thi học kì toán lớp 3</a></h3>
-                                             <p class="prod-rel-price">
-                                                  <b>Miễn phí</b>
-                                             </p>
-                                             <div class="prod-rel-actions">
-                                                  <a title="Yêu thích" href="#" class="prod-rel-favorites"><i class="fa fa-heart"></i></a>
-                                                  <a title="So sánh" href="#" class="prod-rel-compare"><i class="fa fa-bar-chart"></i></a>
-                                                  <p class="prod-i-addwrap">
-                                                       <a title="Tải về" href="#" class="prod-i-add"><i class="fa fa-download"></i></a>
-                                                  </p>
-                                             </div>
-                                        </div>
-                                   </div>
-                                   <div class="prod-rel">
-                                        <a href="#" class="prod-rel-img">
-                                             <img src="~/Content/Asset/lib_binh/img/color/tailieu.png" alt="Toán c3">
-                                        </a>
-                                        <div class="prod-rel-cont">
-                                             <h3><a href="#">Thi học kì toán lớp 3</a></h3>
-                                             <p class="prod-rel-price">
-                                                  <b>Miễn phí</b>
-                                             </p>
-                                             <div class="prod-rel-actions">
-                                                  <a title="Yêu thích" href="#" class="prod-rel-favorites"><i class="fa fa-heart"></i></a>
-                                                  <a title="So sánh" href="#" class="prod-rel-compare"><i class="fa fa-bar-chart"></i></a>
-                                                  <p class="prod-i-addwrap">
-                                                       <a title="Tải về" href="#" class="prod-i-add"><i class="fa fa-download"></i></a>
-                                                  </p>
-                                             </div>
-                                        </div>
-                                   </div>
-                              </li>
-
-                         </ul>
+                         <p data-prodtab-num="5" class="prod-tab-mob" data-prodtab="#prod-tab-5">Tải xuống (@document.num_down)</p>
+                         <div class="prod-tab prod-props" id="prod-tab-5">
+                              <a href="@document.link_drive" target="_blank"><i class="fa fa-download"></i><span style="font-weight: bold;font-size: 20px;"> ẤN ĐỂ TẢI</span></a>
+                         </div>
                     </div>
                </div>
-               <!-- Related Products - end -->
 
-          </section>
-     </main>
+          </div>
+          <!-- Single Product - end -->
+          <!-- Related Products - start -->
+          <div class="prod-related">
+               <h2><span>Tài liệu liên quan</span></h2>
+               <div class="prod-related-car" id="prod-related-car">
+                    <ul class="slides">
+
+                         <li class="prod-rel-wrap">
+                              @foreach (var doc in lst1)
+                              {
+                                   <div class="prod-rel">
+                                        <a href="#" class="prod-rel-img">
+                                             <img src="~/Content/Asset/lib_binh/img/color/tailieu.png" alt="">
+                                        </a>
+                                        <div class="prod-rel-cont">
+                                             <h3><a href="/Home/Detail_Document/@doc.id_doc">@doc.file_name</a></h3>
+                                             <p class="prod-rel-price">
+                                                  <b>Miễn phí</b>
+                                             </p>
+                                             <div class="prod-rel-actions">
+                                                  <a title="Yêu thích" href="#" class="prod-rel-favorites"><i class="fa fa-heart"></i></a>
+                                                  <a title="So sánh" href="#" class="prod-rel-compare"><i class="fa fa-bar-chart"></i></a>
+                                                  <p class="prod-i-addwrap">
+                                                       <a title="Tải về" href="@doc.link_drive" target="_blank" class="prod-i-add"><i class="fa fa-download"></i></a>
+                                                  </p>
+                                             </div>
+                                        </div>
+                                   </div>
+
+                              }
+                         </li>
+                         <li class="prod-rel-wrap">
+                              @foreach (var doc in lst2)
+                              {
+                                   <div class="prod-rel">
+                                        <a href="#" class="prod-rel-img">
+                                             <img src="~/Content/Asset/lib_binh/img/color/tailieu.png" alt="">
+                                        </a>
+                                        <div class="prod-rel-cont">
+                                             <h3><a href="/Home/Detail_Document/@doc.id_doc">@doc.file_name</a></h3>
+                                             <p class="prod-rel-price">
+                                                  <b>Miễn phí</b>
+                                             </p>
+                                             <div class="prod-rel-actions">
+                                                  <a title="Yêu thích" href="#" class="prod-rel-favorites"><i class="fa fa-heart"></i></a>
+                                                  <a title="So sánh" href="#" class="prod-rel-compare"><i class="fa fa-bar-chart"></i></a>
+                                                  <p class="prod-i-addwrap">
+                                                       <a title="Tải về" href="@doc.link_drive" class="prod-i-add"><i class="fa fa-download"></i></a>
+                                                  </p>
+                                             </div>
+                                        </div>
+                                   </div>
+
+                              }
+                         </li>
+                    </ul>
+               </div>
+          </div>
+          <!-- Related Products - end -->
+
+     </section>
+</main>
 
