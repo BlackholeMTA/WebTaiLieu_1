@@ -165,13 +165,13 @@ namespace WebToanHoc.Areas.Admin.Controllers
             int id_user = get_ID_User();
             if (id_user == -1)
                 return RedirectToAction("Index", "Login");
-            if (Request.Url.Segments.Count() == 3)
+            if (Request.Url.Segments.Count() == 4)
             {
                 return RedirectToAction("Index");
             }
             else
             {
-                int id = Convert.ToInt32(Request.Url.Segments[3]);
+                int id = Convert.ToInt32(Request.Url.Segments[4]);
                 var doc = db.tbl_file.Where(x => x.id_doc == id).FirstOrDefault();
                 ViewBag.document = doc;
 
@@ -287,48 +287,7 @@ namespace WebToanHoc.Areas.Admin.Controllers
                 return View();
             }
         }
-        //// POST: Admin/Home/Create
-        //[HttpPost]
-        //public ActionResult Create(FormCollection collection)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add insert logic here
-
-        //        return RedirectToAction("Index");
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
-
-
-        // GET: Admin/Home/Edit/5
-        //public ActionResult Edit(int id)
-        //{
-        //    return View();
-        //}
-
-        //POST: Admin/Home/Edit/5
-        //[HttpPost]
-        //public ActionResult Edit(int id, FormCollection collection)
-        //{
-        //    try
-        //    {
-        //    TODO: Add update logic here
-
-        //        return RedirectToAction("Index");
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
-        //public ActionResult Delete()
-        //{
-        //    return View("Index", "Home");
-        //}
+       
         // GET: Admin/Home/Delete/5
         public ActionResult Delete()
         {
@@ -351,21 +310,7 @@ namespace WebToanHoc.Areas.Admin.Controllers
             
         }
 
-        //POST: Admin/Home/Delete/5
-        //[HttpPost]
-        //public ActionResult Delete(int id, FormCollection collection)
-        //{
-        //    try
-        //    {
-        //    TODO: Add delete logic here
-
-        //        return RedirectToAction("Index");
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
+       
 
         // lấy id của người dùng
         public int get_ID_User()
