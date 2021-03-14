@@ -178,15 +178,20 @@ namespace WebToanHoc.Areas.Admin.Models
         //delete folder googledrivefiles
         public static void DeleteFolder()
         {
-            System.IO.DirectoryInfo di = new DirectoryInfo("F://tai_lieu_hoc_tap//01_Anh_Cuong//WebToanHoc//WebToanHoc//GoogleDriveFiles");
-            foreach (FileInfo file in di.EnumerateFiles())
+        //F://tai_lieu_hoc_tap//01_Anh_Cuong//WebToanHoc//WebToanHoc//GoogleDriveFiles
+            System.IO.DirectoryInfo di = new DirectoryInfo("F://tai_lieu_hoc_tap//01_Anh_Cuong//WebToanHoc_1//WebToanHoc//GoogleDriveFiles");
+            if(di.Exists)
             {
-                file.Delete();
+                foreach (FileInfo file in di.EnumerateFiles())
+                {
+                    file.Delete();
+                }
+                foreach (DirectoryInfo dir in di.EnumerateDirectories())
+                {
+                    dir.Delete(true);
+                }
             }
-            foreach (DirectoryInfo dir in di.EnumerateDirectories())
-            {
-                dir.Delete(true);
-            }
+            
         }
      }
 }

@@ -12,7 +12,7 @@
     int temp = qty_doc % 20;
     if(temp>0)
     {
-        num_page = qty_doc / 20 + temp;
+        num_page = qty_doc / 20 + 1;
     }
     else
     {
@@ -72,9 +72,21 @@
                         </thead>
                         <tbody>
                             @{
-                                    int i = 1;
-                                    for (int j=((page-1)*20);j<page*20;j++)
-                                    {
+                                int end = 0;
+                                if(qty_doc-((page-1)*20)>20)
+                                {
+                                    end = 20;
+                                }
+                                else
+                                {
+                                    end = qty_doc - ((page-1) * 20);
+                                }
+                                //int i = 1*(page-1)*20;
+                                int i = 0;
+                                for (int j=((page-1)*20);j<((page-1)*20)+end;j++)
+                                {
+                                    i = j + 1;
+
                                     <tr>
                                         <td><input type="checkbox" name="checkItem" class="checkItem"></td>
                                         <td><span class="tbody-text">@i</span>
@@ -92,7 +104,7 @@
                                         <td><span class="tbody-text">Admin</span></td>
                                         <td><span class="tbody-text">@list_document[j].time_up</span></td>
                                     </tr>
-                                    i = i + 1;
+                                    //i = i + 1;
                                 }
                             }
 
@@ -119,29 +131,24 @@
             <div class="section-detail clearfix">
                 <ul id="list-paging" class="fl-right">
                     @{
-                        if (num_page <= 3)
-                        {
+                       
                             for (int x = 1; x <= num_page; x++)
                             {
                                 if (x == page)
                                 {
-                                    <li style="background:blue">
-                                        <a href="~/Admin/Home/Index/@x" title="">@x</a>
+                                    <li style="background:#25ff4a">
+                                        <a href="~/Admin/Home/Index?page=@x" title="">@x</a>
                                     </li>
                                 }
                                 else
                                 {
                                     <li>
-                                        <a href="~/Admin/Home/Index/@x" title="">@x</a>
+                                        <a href="~/Admin/Home/Index?page=@x" title="">@x</a>
                                     </li>
                                 }
 
                             }
-                        }
-                        else if(num_page>3 && page<=3)
-                        {
-                           
-                        }
+                       
                     }
                     @*<li>
             <a href="" title=""><</a>

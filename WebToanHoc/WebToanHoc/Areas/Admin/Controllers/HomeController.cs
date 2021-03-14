@@ -8,13 +8,14 @@ using WebToanHoc.Models;
 using WebToanHoc.EF.Model;
 using System.Security.Cryptography;
 
+
 namespace WebToanHoc.Areas.Admin.Controllers
 {
     public class HomeController : Controller
     {
         DbContext_WebTaiLieu db = new DbContext_WebTaiLieu();
         // GET: Admin/Home
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
             int id_user = get_ID_User();
             if (id_user == -1)
@@ -33,28 +34,50 @@ namespace WebToanHoc.Areas.Admin.Controllers
             //var list_docu = db.tbl_file.Where(x => x.id_cate <= max & x.id_cate >= min & x.status == 1).ToList();
 
             //var list_docu = db.tbl_file.Where(x =>  x.status == 1).ToList();
+
+            //Cach 1
             var docu = db.tbl_file.Join(db.tbl_category, c => c.id_cate, p => p.id_cate,
                 (c, p) => new
                 {
-                    id_doc =c.id_doc,
+                    id_doc = c.id_doc,
                     file_name = c.file_name,
                     time_up = c.time_up,
                     cate_name = p.cate_name,
                     status = c.status
                 }
-                ).Where(c => c.status == 1).ToList();
+                ).Where(c => c.status == 1).OrderByDescending(x => x.time_up).ToList();
             var list_docu = new List<list_doc>();
-            foreach(var item in docu)
+            foreach (var item in docu)
             {
                 var x = new list_doc(item.id_doc, item.file_name, item.cate_name, item.time_up.ToString());
                 list_docu.Add(x);
             }
-            
+
+            //Cach 2
+            //     var list_file = db.tbl_file;
+            //     var list_cate = db.tbl_category;
+            //     var list_docu = from list_file in lf
+            //                     join
+            //list_cate in lc on list_file.id_cate equals list_cate.id_cate
+            //                     select new
+            //                     {
+            //                         id_doc = list_file.id_doc
+            //                     };
+
             //var list = db.tbl_subject.Include(x => x.tbl_category.Select(y => y.id_doc)).Include(x => x.id_category).Single(z => z.id_subject == 1).ToList();
             //var list_docu = db.tbl_file.Where(x => x.status == 1 & x.id_cate is (db.tbl_subject.Where(y=>y.id_subject==1).toList()).ToList();
             ViewBag.list_document = list_docu;
             ViewBag.qty_doc = list_docu.Count();
-            ViewBag.page = 1;
+            if (page==null)
+            {
+                ViewBag.page = 1;
+            }
+            else
+            {
+                
+                ViewBag.page = page;
+                return View();
+            }
             //ViewBag.listLink = new List<string>();
             //ViewBag.fileName = new List<string>();
             ////ViewBag.list_link = new List<string>();
@@ -142,13 +165,13 @@ namespace WebToanHoc.Areas.Admin.Controllers
             int id_user = get_ID_User();
             if (id_user == -1)
                 return RedirectToAction("Index", "Login");
-            if (Request.Url.Segments.Count() == 4)
+            if (Request.Url.Segments.Count() == 3)
             {
                 return RedirectToAction("Index");
             }
             else
             {
-                int id = Convert.ToInt32(Request.Url.Segments[4]);
+                int id = Convert.ToInt32(Request.Url.Segments[5]);
                 var doc = db.tbl_file.Where(x => x.id_doc == id).FirstOrDefault();
                 ViewBag.document = doc;
 

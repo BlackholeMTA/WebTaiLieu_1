@@ -39,6 +39,8 @@ namespace WebToanHoc.Auto
                 tbl_file new_file = list_docu[num];
                 new_file.status = 1;
                 new_file.time_up = aDateTime;
+                new_file.num_view = 1;
+                new_file.num_down = 1;
                 db.SaveChanges();
                 
             }
