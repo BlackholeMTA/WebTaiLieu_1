@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+@using (Html.BeginForm("Create", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row" style="margin-top:10px;margin-bottom:10px;">
+        <div class="col-md-2"><label for="file">Upload file on drive:</label></div>
+        <div class="col-md-5">
+            @*<input type="file" name="file" id="file" multiple />*@
+            <input type="file" name="file" id="files" multiple directory="" webkitdirectory="" moxdirectory="" />
+            <input type="text" name="folderName" id="folderName" value="" placeholder="Tên thư mục" class="form-control" />
+        </div>
+        <div class="col-md-5">
+            <label>Chọn danh mục</label>
+            <select name="cate" id="cate"  class="form-control">
+                <option value="0">Chọn danh mục</option>
+                @foreach (var item in ViewBag.category)
+                {
+                    <option value="@item.id_cate">@item.cate_name</option>
+                }
+            </select>
+        </div>
+        <br />
+        <div class="col-md-2">
+            <br />
+            <input type="submit" class="btn btn-success" value="Upload" />
+        </div>
+    </div>
+}
+@ViewBag.Success
+@foreach (var item in ViewBag.listLink)
+{
+    <ul>
+        <li>@item</li>
+    </ul>
+}
+@foreach (var item1 in ViewBag.fileName)
+{
+    <ul>
+        <li>@item1</li>
+    </ul>
+}
+@*@ViewBag.count*@
+@*@foreach (string item1 in ViewBag.list_link)
+    {
+        <ul>
+            <li>@item1</li>
+        </ul>
+    }*@
+<br />
+<br />
+
+

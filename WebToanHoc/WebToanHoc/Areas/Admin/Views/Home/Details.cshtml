@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
+    var document = ViewBag.document;
+}
+    <div class="row">
+        <div class="col-md-8">
+            <form action="/Admin/Home/Update/@document.id_doc" method="post">
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    <label for="doc_name">Tên tài liệu</label>
+                    <input type="text" name="doc_name" class="form-control" id="doc_name" value="@document.file_name">
+                </div>
+                @*<div class="form-group">
+                    <label for="category">Category</label>
+                    <select name="" id="category" class="form-control">
+                        <option value="">PHP</option>
+                        <option value="">Bootstrap</option>
+                        <option value="">Html</option>
+                        <option value="">Css</option>
+                    </select>
+
+                </div>*@
+                <div class="form-group">
+                    <label for="description">Mô tả</label>
+                    <textarea name="description" id="description" cols="30" rows="10" class="form-control text-left">
+            @document.description
+    					</textarea>
+                </div>
+                <input id="button" type="submit" name="btn_update" value="Cập nhật">
+            </form>
+        </div>
+
+    </div>
+
+

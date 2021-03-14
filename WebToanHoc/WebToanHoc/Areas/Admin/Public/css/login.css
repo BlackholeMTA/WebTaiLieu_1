@@ -1,0 +1,52 @@
+﻿body {
+    font-family: arial;
+    font-size: 14px;
+    line-height: 23px;
+    background-color: #49c7ec;
+}
+
+#wp-form-login {
+    background-color: #fff;
+    width: 265px;
+    border-radius: 3px;
+    padding: 10px;
+    text-align: center;
+    margin: 150px auto;
+}
+
+form#form-login input#username, form#form-login input#password, form#form-login input#button, input#fullname, input#email, input#repassword {
+    display: block;
+    width: 100%;
+}
+
+form#form-login {
+    text-align: center;
+    /*margin: 0px auto;*/
+}
+
+#form-login input#username, input#password, input#button, input#fullname, input#email, input#repassword {
+    margin: 0px auto;
+    padding: 10px 7px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#form-login input#username, input#password, input#fullname, input#email, input#repassword {
+    border: none;
+    background-color: #e8e5e5;
+}
+
+#form-login input#button {
+    background-color: #4ec5e8;
+    color: #fff;
+    padding: 7px;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+#username {
+    cursor: auto !important;
+}

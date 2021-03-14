@@ -1,0 +1,642 @@
+﻿@{
+     ViewBag.Title = "Web Toán học";
+     Layout = "~/Views/Shared/_Layout.cshtml";
+     var list_document = ViewBag.list_document;
+}
+
+     <main>
+          <section class="container">
+
+
+               <!-- Slider -->
+               <div class="fr-slider-wrap">
+                    <div class="fr-slider">
+                         <ul class="slides">
+                              <li>
+                                   <img src="~/Content/Asset/lib_binh/img/slider/pexels-jeshootscom-442574.jpg" alt="">
+                                   <div class="fr-slider-cont">
+                                        <h3>TRUY CẬP NGAY ĐỂ NHẬN TÀI LIỆU FREE!</h3>
+                                        <p>Nhận ngay những tài liệu chất lượng! <br>Tải về không giới hạn!</p>
+                                        <p class="fr-slider-more-wrap">
+                                             <a class="fr-slider-more" href="#">TRUY CẬP NGAY</a>
+                                        </p>
+                                   </div>
+                              </li>
+                              <li>
+                                   <img src="~/Content/Asset/lib_binh/img/slider/pexels-jeshootscom-442574.jpg" alt="">
+                                   <div class="fr-slider-cont">
+                                        <h3>LIÊN TỤC CẬP NHẬT TÀI LIỆU MỚI!</h3>
+                                        <p>Đầy đủ tài liệu về các lĩnh vực.<br>Mở rộng tri thức con người bạn.</p>
+                                        <p class="fr-slider-more-wrap">
+                                             <a class="fr-slider-more" href="#">TÌM KIẾM NGAY</a>
+                                        </p>
+                                   </div>
+                              </li>
+                              <li>
+                                   <img src="~/Content/Asset/lib_binh/img/slider/pexels-jeshootscom-442574.jpg" alt="">
+                                   <div class="fr-slider-cont">
+                                        <h3>NHỮNG BÀI REVIEW CHẤT LƯỢNG NHẤT</h3>
+                                        <p>Các bài review về các tài liệu có tâm nhất.<br>Hiệu quả nhất. Chính xác nhất. Khách quan nhất</p>
+                                        <p class="fr-slider-more-wrap">
+                                             <a class="fr-slider-more" href="#">XEM NGAY</a>
+                                        </p>
+                                   </div>
+                              </li>
+                         </ul>
+                    </div>
+               </div>
+
+
+               <!-- Popular Products -->
+               <div class="fr-pop-wrap">
+
+                    <h3 class="component-ttl"><span>BÀI ĐĂNG MỚI NHẤT</span></h3>
+
+                    <ul class="fr-pop-tabs sections-show">
+                         <li><a data-frpoptab-num="1" data-frpoptab="#frpoptab-tab-1" href="#" class="active">Tất cả</a></li>
+                         <li><a data-frpoptab-num="2" data-frpoptab="#frpoptab-tab-2" href="#">Toán cấp 2</a></li>
+                         <li><a data-frpoptab-num="3" data-frpoptab="#frpoptab-tab-3" href="#">Toán cấp 3</a></li>
+                         <li><a data-frpoptab-num="4" data-frpoptab="#frpoptab-tab-4" href="#">Toán thi THPT</a></li>
+                         @*<li><a data-frpoptab-num="5" data-frpoptab="#frpoptab-tab-5" href="#">Khác</a></li>*@
+                    </ul>
+
+                    <div class="fr-pop-tab-cont">
+
+                         <p data-frpoptab-num="1" class="fr-pop-tab-mob active" data-frpoptab="#frpoptab-tab-1">Tất cả</p>
+                         <div class="flexslider prod-items fr-pop-tab" id="frpoptab-tab-1">
+
+                              <ul class="slides">
+                                   @foreach (var doc in list_document)
+                                   {
+                                        <li class="prod-i">
+                                             <div class="prod-i-top">
+                                                  <a href="/Home/Detail_Document/@doc.id_doc" class="prod-i-img">
+                                                       <!-- NO SPACE --><img src="~/Content/Asset/lib_binh//img/color/tailieu.png" alt="">
+                                                       <!-- NO SPACE -->
+                                                  </a>
+                                                  <p class="prod-i-info">
+                                                       <a href="#" class="prod-i-favorites"><span>Yêu thích</span><i class="fa fa-heart"></i></a>
+                                                       <a href="#" class="qview-btn prod-i-qview"><span>Xem nhanh</span><i class="fa fa-search"></i></a>
+                                                       <a class="prod-i-compare" href="#"><span>So sánh</span><i class="fa fa-bar-chart"></i></a>
+                                                  </p>
+                                                  <p class="prod-i-addwrap">
+                                                       <a href="#" class="prod-i-add">Chi tiết</a>
+                                                  </p>
+                                             </div>
+                                             <h3>
+                                                  <a href="/Home/Detail_Document/@doc.id_doc">@doc.file_name</a>
+                                             </h3>
+                                             <p class="prod-i-price">
+                                                  <b>Free</b>
+                                             </p>
+                                             <div class="prod-i-skuwrapcolor">
+                                                  <ul class="prod-i-skucolor">
+                                                       <li class="bx_active"><img src="~/Content/Asset/lib_binh/img/color/red.jpg" alt="Red"></li>
+                                                       <li><img src="~/Content/Asset/lib_binh/img/color/blue.jpg" alt="Blue"></li>
+                                                  </ul>
+                                             </div>
+                                        </li>
+                                   }
+
+                                   
+
+                              </ul>
+
+                         </div>
+
+                         <p data-frpoptab-num="2" class="fr-pop-tab-mob" data-frpoptab="#frpoptab-tab-2">Toán cấp 2</p>
+                         <div class="flexslider prod-items fr-pop-tab" id="frpoptab-tab-2">
+
+                              <ul class="slides">
+                                   <li class="prod-i">
+                                        <div class="prod-i-top">
+                                             <a href="/Home/Detail_Document" class="prod-i-img">
+                                                  <!-- NO SPACE --><img src="~/Content/Asset/lib_binh/img/color/tailieu.png" alt="">
+                                                  <!-- NO SPACE -->
+                                             </a>
+                                             <p class="prod-i-info">
+                                                  <a href="#" class="prod-i-favorites"><span>Yêu thích</span><i class="fa fa-heart"></i></a>
+                                                  <a href="#" class="qview-btn prod-i-qview"><span>Xem nhanh</span><i class="fa fa-search"></i></a>
+                                                  <a class="prod-i-compare" href="#"><span>So sánh</span><i class="fa fa-bar-chart"></i></a>
+                                             </p>
+                                             <p class="prod-i-addwrap">
+                                                  <a href="#" class="prod-i-add">Chi tiết</a>
+                                             </p>
+                                        </div>
+                                        <h3>
+                                             <a href="/Home/Detail_Document">Đề thi toán lớp 3</a>
+                                        </h3>
+                                        <p class="prod-i-price">
+                                             <b>Free</b>
+                                        </p>
+                                        <div class="prod-i-skuwrapcolor">
+                                             <ul class="prod-i-skucolor">
+                                                  <li class="bx_active"><img src="~/Content/Asset/lib_binh/img/color/red.jpg" alt="Red"></li>
+                                                  <li><img src="~/Content/Asset/lib_binh/img/color/blue.jpg" alt="Blue"></li>
+                                             </ul>
+                                        </div>
+                                   </li>
+
+                              </ul>
+                         </div>
+
+                         <p data-frpoptab-num="3" class="fr-pop-tab-mob" data-frpoptab="#frpoptab-tab-3">Toán cấp 2</p>
+                         <div class="flexslider prod-items fr-pop-tab" id="frpoptab-tab-3">
+
+                              <ul class="slides">
+
+                                   <li class="prod-i">
+                                        <div class="prod-i-top">
+                                             <a href="/Home/Detail_Document" class="prod-i-img">
+                                                  <!-- NO SPACE --><img src="~/Content/Asset/lib_binh/img/color/tailieu.png" alt="">
+                                                  <!-- NO SPACE -->
+                                             </a>
+                                             <p class="prod-i-info">
+                                                  <a href="#" class="prod-i-favorites"><span>Yêu thích</span><i class="fa fa-heart"></i></a>
+                                                  <a href="#" class="qview-btn prod-i-qview"><span>Xem nhanh</span><i class="fa fa-search"></i></a>
+                                                  <a class="prod-i-compare" href="#"><span>So sánh</span><i class="fa fa-bar-chart"></i></a>
+                                             </p>
+                                             <p class="prod-i-addwrap">
+                                                  <a href="#" class="prod-i-add">Chi tiết</a>
+                                             </p>
+                                        </div>
+                                        <h3>
+                                             <a href="/Home/Detail_Document">Đề thi toán lớp 3</a>
+                                        </h3>
+                                        <p class="prod-i-price">
+                                             <b>Free</b>
+                                        </p>
+                                        <div class="prod-i-skuwrapcolor">
+                                             <ul class="prod-i-skucolor">
+                                                  <li class="bx_active"><img src="~/Content/Asset/lib_binh/img/color/red.jpg" alt="Red"></li>
+                                                  <li><img src="~/Content/Asset/lib_binh/img/color/blue.jpg" alt="Blue"></li>
+                                             </ul>
+                                        </div>
+                                   </li>
+
+                              </ul>
+                         </div>
+
+                         <p data-frpoptab-num="4" class="fr-pop-tab-mob" data-frpoptab="#frpoptab-tab-4">Toán cấp 3</p>
+                         <div class="flexslider prod-items fr-pop-tab" id="frpoptab-tab-4">
+
+                              <ul class="slides">
+
+                                   <li class="prod-i">
+                                        <div class="prod-i-top">
+                                             <a href="/Home/Detail_Document" class="prod-i-img">
+                                                  <!-- NO SPACE --><img src="~/Content/Asset/lib_binh/img/color/tailieu.png" alt="">
+                                                  <!-- NO SPACE -->
+                                             </a>
+                                             <p class="prod-i-info">
+                                                  <a href="#" class="prod-i-favorites"><span>Yêu thích</span><i class="fa fa-heart"></i></a>
+                                                  <a href="#" class="qview-btn prod-i-qview"><span>Xem nhanh</span><i class="fa fa-search"></i></a>
+                                                  <a class="prod-i-compare" href="#"><span>So sánh</span><i class="fa fa-bar-chart"></i></a>
+                                             </p>
+                                             <p class="prod-i-addwrap">
+                                                  <a href="#" class="prod-i-add">Chi tiết</a>
+                                             </p>
+                                        </div>
+                                        <h3>
+                                             <a href="/Home/Detail_Document">Đề thi toán lớp 3</a>
+                                        </h3>
+                                        <p class="prod-i-price">
+                                             <b>Free</b>
+                                        </p>
+                                        <div class="prod-i-skuwrapcolor">
+                                             <ul class="prod-i-skucolor">
+                                                  <li class="bx_active"><img src="~/Content/Asset/lib_binh/img/color/red.jpg" alt="Red"></li>
+                                                  <li><img src="~/Content/Asset/lib_binh/img/color/blue.jpg" alt="Blue"></li>
+                                             </ul>
+                                        </div>
+                                   </li>
+
+                              </ul>
+
+                         </div>
+
+
+                         <p data-frpoptab-num="5" class="fr-pop-tab-mob" data-frpoptab="#frpoptab-tab-5">Khác</p>
+                         <div class="flexslider prod-items fr-pop-tab" id="frpoptab-tab-5">
+
+                              <ul class="slides">
+
+                                   <li class="prod-i">
+                                        <div class="prod-i-top">
+                                             <a href="/Home/Detail_Document" class="prod-i-img">
+                                                  <!-- NO SPACE --><img src="~/Content/Asset/lib_binh/img/color/tailieu.png" alt="">
+                                                  <!-- NO SPACE -->
+                                             </a>
+                                             <p class="prod-i-info">
+                                                  <a href="#" class="prod-i-favorites"><span>Yêu thích</span><i class="fa fa-heart"></i></a>
+                                                  <a href="#" class="qview-btn prod-i-qview"><span>Xem nhanh</span><i class="fa fa-search"></i></a>
+                                                  <a class="prod-i-compare" href="#"><span>So sánh</span><i class="fa fa-bar-chart"></i></a>
+                                             </p>
+                                             <p class="prod-i-addwrap">
+                                                  <a href="#" class="prod-i-add">Chi tiết</a>
+                                             </p>
+                                        </div>
+                                        <h3>
+                                             <a href="/Home/Detail_Document">Đề thi toán lớp 3</a>
+                                        </h3>
+                                        <p class="prod-i-price">
+                                             <b>Free</b>
+                                        </p>
+                                        <div class="prod-i-skuwrapcolor">
+                                             <ul class="prod-i-skucolor">
+                                                  <li class="bx_active"><img src="~/Content/Asset/lib_binh/img/color/red.jpg" alt="Red"></li>
+                                                  <li><img src="~/Content/Asset/lib_binh/img/color/blue.jpg" alt="Blue"></li>
+                                             </ul>
+                                        </div>
+                                   </li>
+
+                              </ul>
+
+                         </div>
+
+
+                    </div>
+                    <!-- .fr-pop-tab-cont -->
+
+
+               </div>
+               <!-- .fr-pop-wrap -->
+               <!-- Banners -->
+               <!-- Special offer -->
+               <div class="discounts-wrap">
+                    <h3 class="component-ttl"><span>Được tải nhiều nhất</span></h3>
+                    <div class="flexslider discounts-list">
+                         <ul class="slides">
+                              <li class="discounts-i">
+                                   <a href="/Home/Detail_Document" class="discounts-i-img">
+                                        <img src="~/Content/Asset/lib_binh/img/color/tailieu.png" alt="Dicta doloremque">
+                                   </a>
+                                   <h3 class="discounts-i-ttl">
+                                        <a href="/Home/Detail_Document">Đề thi toán lớp 3</a>
+                                   </h3>
+                                   <p class="discounts-i-price">
+                                        <b>Free</b>
+                                   </p>
+                              </li>
+                              <li class="discounts-i">
+                                   <a href="/Home/Detail_Document" class="discounts-i-img">
+                                        <img src="~/Content/Asset/lib_binh/img/color/tailieu.png" alt="Dicta doloremque">
+                                   </a>
+                                   <h3 class="discounts-i-ttl">
+                                        <a href="/Home/Detail_Document">Đề thi toán lớp 3</a>
+                                   </h3>
+                                   <p class="discounts-i-price">
+                                        <b>Free</b> 
+                                   </p>
+                              </li>
+                              <li class="discounts-i">
+                                   <a href="/Home/Detail_Document" class="discounts-i-img">
+                                        <img src="~/Content/Asset/lib_binh/img/color/tailieu.png" alt="Dicta doloremque">
+                                   </a>
+                                   <h3 class="discounts-i-ttl">
+                                        <a href="/Home/Detail_Document">Đề thi toán lớp 3</a>
+                                   </h3>
+                                   <p class="discounts-i-price">
+                                        <b>Free</b> 
+                                   </p>
+                              </li>
+                              <li class="discounts-i">
+                                   <a href="/Home/Detail_Document" class="discounts-i-img">
+                                        <img src="~/Content/Asset/lib_binh/img/color/tailieu.png" alt="Dicta doloremque">
+                                   </a>
+                                   <h3 class="discounts-i-ttl">
+                                        <a href="/Home/Detail_Document">Đề thi toán lớp 3</a>
+                                   </h3>
+                                   <p class="discounts-i-price">
+                                        <b>Free</b> 
+                                   </p>
+                              </li>
+                              <li class="discounts-i">
+                                   <a href="/Home/Detail_Document" class="discounts-i-img">
+                                        <img src="~/Content/Asset/lib_binh/img/color/tailieu.png" alt="Dicta doloremque">
+                                   </a>
+                                   <h3 class="discounts-i-ttl">
+                                        <a href="/Home/Detail_Document">Đề thi toán lớp 3</a>
+                                   </h3>
+                                   <p class="discounts-i-price">
+                                        <b>Free</b> 
+                                   </p>
+                              </li>
+                         </ul>
+                    </div>
+                    <div class="discounts-info">
+                         <p>Nhanh chóng tải ngay!<br>Tải trong mọi ngày</p>
+                         <a href="catalog-list.html">Tải ngay</a>
+                    </div>
+               </div>
+
+
+               <!-- Latest news -->
+               <div class="posts-wrap">
+                    <div class="posts-list">
+                         <div class="posts-i">
+                              <a class="posts-i-img" href="post.html">
+                                   <span style="background: url('/Content/Asset/lib_binh/img/color/tailieu.png')"></span>
+                              </a>
+                              <time class="posts-i-date" datetime="2016-11-09 00:00:00"><span>11</span> March</time>
+                              <div class="posts-i-info">
+                                   <a href="blog.html" class="posts-i-ctg">Đánh giá</a>
+                                   <h3 class="posts-i-ttl">
+                                        <a href="post.html">Đề thi toán đại học</a>
+                                   </h3>
+                              </div>
+                         </div>
+                         <div class="posts-i">
+                              <a class="posts-i-img" href="post.html">
+                                   <span style="background: url('/Content/Asset/lib_binh/img/color/tailieu.png')"></span>
+                              </a>
+                              <time class="posts-i-date" datetime="2016-11-09 00:00:00"><span>12</span> March</time>
+                              <div class="posts-i-info">
+                                   <a href="blog.html" class="posts-i-ctg">Đánh giá</a>
+                                   <h3 class="posts-i-ttl">
+                                        <a href="post.html">Đề thi văn đại học</a>
+                                   </h3>
+                              </div>
+                         </div>
+                         <div class="posts-i">
+                              <a class="posts-i-img" href="post.html">
+                                   <span style="background: url('/Content/Asset/lib_binh/img/color/tailieu.png')"></span>
+                              </a>
+                              <time class="posts-i-date" datetime="2016-11-09 00:00:00"><span>11</span> March</time>
+                              <div class="posts-i-info">
+                                   <a href="blog.html" class="posts-i-ctg">Đánh giá</a>
+                                   <h3 class="posts-i-ttl">
+                                        <a href="post.html">Đề thi anh đại học</a>
+                                   </h3>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+
+
+               <!-- Testimonials -->
+               @*<div class="reviews-wrap">
+                    <div class="reviewscar-wrap">
+                         <div class="swiper-container reviewscar">
+                              <div class="swiper-wrapper">
+                                   <div class="swiper-slide">
+                                        <p>Sống là phải chơi</p>
+                                   </div>
+                                   <div class="swiper-slide">
+                                        <p>Học không chơi đánh rơi tuổi trẻ</p>
+                                   </div>
+                                   <div class="swiper-slide">
+                                        <p>Chơi không học rơi mất tuổi thanh xuân</p>
+                                   </div>
+                                   <div class="swiper-slide">
+                                        <p>Sống là phải chơi</p>
+                                   </div>
+                                   <div class="swiper-slide">
+                                        <p>Học không chơi đánh rơi tuổi trẻ</p>
+                                   </div>
+                                   <div class="swiper-slide">
+                                        <p>Chơi không học rơi mất tuổi thanh xuân</p>
+                                   </div>
+                                   <div class="swiper-slide">
+                                        <p>Sống là phải chơi</p>
+                                   </div>
+                                   <div class="swiper-slide">
+                                        <p>Học không chơi đánh rơi tuổi trẻ</p>
+                                   </div>
+                                   <div class="swiper-slide">
+                                        <p>Chơi không học rơi mất tuổi thanh xuân</p>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="swiper-container reviewscar-thumbs">
+                              <div class="swiper-wrapper">
+                                   <div class="swiper-slide">
+                                        <img src="http://placehold.it/120x120" alt="Aureole Jayde">
+                                        <h3 class="reviewscar-ttl"><a href="reviews.html">Huẩn Rose</a></h3>
+                                        <p class="reviewscar-post">Giáo sư</p>
+                                   </div>
+                                   <div class="swiper-slide">
+                                        <img src="http://placehold.it/120x120" alt="Benjy Darrin">
+                                        <h3 class="reviewscar-ttl"><a href="reviews.html">Nguyễn Văn Sơn</a></h3>
+                                        <p class="reviewscar-post">Nhân viên</p>
+                                   </div>
+                                   <div class="swiper-slide">
+                                        <img src="http://placehold.it/120x120" alt="Jeni Margie">
+                                        <h3 class="reviewscar-ttl"><a href="reviews.html">Hoàng Trọng Bình</a></h3>
+                                        <p class="reviewscar-post">Nhà phát triển</p>
+                                   </div>
+                                   <div class="swiper-slide">
+                                        <img src="http://placehold.it/120x120" alt="Aureole Jayde">
+                                        <h3 class="reviewscar-ttl"><a href="reviews.html">Huẩn Rose</a></h3>
+                                        <p class="reviewscar-post">Giáo sư</p>
+                                   </div>
+                                   <div class="swiper-slide">
+                                        <img src="http://placehold.it/120x120" alt="Benjy Darrin">
+                                        <h3 class="reviewscar-ttl"><a href="reviews.html">Nguyễn Văn Sơn</a></h3>
+                                        <p class="reviewscar-post">Nhân viên</p>
+                                   </div>
+                                   <div class="swiper-slide">
+                                        <img src="http://placehold.it/120x120" alt="Jeni Margie">
+                                        <h3 class="reviewscar-ttl"><a href="reviews.html">Hoàng Trọng Bình</a></h3>
+                                        <p class="reviewscar-post">Nhà phát triển</p>
+                                   </div>
+                                   <div class="swiper-slide">
+                                        <img src="http://placehold.it/120x120" alt="Aureole Jayde">
+                                        <h3 class="reviewscar-ttl"><a href="reviews.html">Huẩn Rose</a></h3>
+                                        <p class="reviewscar-post">Giáo sư</p>
+                                   </div>
+                                   <div class="swiper-slide">
+                                        <img src="http://placehold.it/120x120" alt="Benjy Darrin">
+                                        <h3 class="reviewscar-ttl"><a href="reviews.html">Nguyễn Văn Sơn</a></h3>
+                                        <p class="reviewscar-post">Nhân viên</p>
+                                   </div>
+                                   <div class="swiper-slide">
+                                        <img src="http://placehold.it/120x120" alt="Jeni Margie">
+                                        <h3 class="reviewscar-ttl"><a href="reviews.html">Hoàng Trọng Bình</a></h3>
+                                        <p class="reviewscar-post">Nhà phát triển</p>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>*@
+
+               <!-- Subscribe Form -->
+               <div class="newsletter">
+                    <h3>Đăng ký với chúng tôi!</h3>
+                    <p>Đăng ký email để nhận ngay những thông tin mới nhất</p>
+                    <form action="#">
+                         <input placeholder="Email của bạn" type="text">
+                         <input name="dangki" value="Đăng ký" type="submit">
+                    </form>
+               </div>
+
+               <!-- Quick View Product - start -->
+               <div class="qview-modal">
+                    <div class="prod-wrap">
+                         <a href="/Home/Detail_Document">
+                              <h1 class="main-ttl">
+                                   <span>Reprehenderit adipisci</span>
+                              </h1>
+                         </a>
+                         <div class="prod-slider-wrap">
+                              <div class="prod-slider">
+                                   <ul class="prod-slider-car">
+                                        <li>
+                                             <a data-fancybox-group="popup-product" class="fancy-img" href="http://placehold.it/500x525">
+                                                  <img src="http://placehold.it/500x525" alt="">
+                                             </a>
+                                        </li>
+                                        <li>
+                                             <a data-fancybox-group="popup-product" class="fancy-img" href="http://placehold.it/500x591">
+                                                  <img src="http://placehold.it/500x591" alt="">
+                                             </a>
+                                        </li>
+                                        <li>
+                                             <a data-fancybox-group="popup-product" class="fancy-img" href="http://placehold.it/500x525">
+                                                  <img src="http://placehold.it/500x525" alt="">
+                                             </a>
+                                        </li>
+                                        <li>
+                                             <a data-fancybox-group="popup-product" class="fancy-img" href="http://placehold.it/500x722">
+                                                  <img src="http://placehold.it/500x722" alt="">
+                                             </a>
+                                        </li>
+                                        <li>
+                                             <a data-fancybox-group="popup-product" class="fancy-img" href="http://placehold.it/500x722">
+                                                  <img src="http://placehold.it/500x722" alt="">
+                                             </a>
+                                        </li>
+                                        <li>
+                                             <a data-fancybox-group="popup-product" class="fancy-img" href="http://placehold.it/500x722">
+                                                  <img src="http://placehold.it/500x722" alt="">
+                                             </a>
+                                        </li>
+                                        <li>
+                                             <a data-fancybox-group="popup-product" class="fancy-img" href="http://placehold.it/500x722">
+                                                  <img src="http://placehold.it/500x722" alt="">
+                                             </a>
+                                        </li>
+                                   </ul>
+                              </div>
+                              <div class="prod-thumbs">
+                                   <ul class="prod-thumbs-car">
+                                        <li>
+                                             <a data-slide-index="0" href="#">
+                                                  <img src="http://placehold.it/500x525" alt="">
+                                             </a>
+                                        </li>
+                                        <li>
+                                             <a data-slide-index="1" href="#">
+                                                  <img src="http://placehold.it/500x591" alt="">
+                                             </a>
+                                        </li>
+                                        <li>
+                                             <a data-slide-index="2" href="#">
+                                                  <img src="http://placehold.it/500x525" alt="">
+                                             </a>
+                                        </li>
+                                        <li>
+                                             <a data-slide-index="3" href="#">
+                                                  <img src="http://placehold.it/500x722" alt="">
+                                             </a>
+                                        </li>
+                                        <li>
+                                             <a data-slide-index="4" href="#">
+                                                  <img src="http://placehold.it/500x722" alt="">
+                                             </a>
+                                        </li>
+                                        <li>
+                                             <a data-slide-index="5" href="#">
+                                                  <img src="http://placehold.it/500x722" alt="">
+                                             </a>
+                                        </li>
+                                        <li>
+                                             <a data-slide-index="6" href="#">
+                                                  <img src="http://placehold.it/500x722" alt="">
+                                             </a>
+                                        </li>
+                                   </ul>
+                              </div>
+                         </div>
+
+                         <div class="prod-cont">
+                              <p class="prod-actions">
+                                   <a href="#" class="prod-favorites"><i class="fa fa-heart"></i> Thêm vào danh sách yêu thích</a>
+                                   <a href="#" class="prod-compare"><i class="fa fa-bar-chart"></i> So sánh</a>
+                              </p>
+                              <div class="prod-skuwrap">
+                                   <p class="prod-skuttl">Color</p>
+                                   <ul class="prod-skucolor">
+                                        <li class="active">
+                                             <img src="~/Content/Asset/lib_binh/img/color/blue.jpg" alt="">
+                                        </li>
+                                        <li>
+                                             <img src="~/Content/Asset/lib_binh/img/color/red.jpg" alt="">
+                                        </li>
+                                        <li>
+                                             <img src="~/Content/Asset/lib_binh/img/color/green.jpg" alt="">
+                                        </li>
+                                        <li>
+                                             <img src="~/Content/Asset/lib_binh/img/color/yellow.jpg" alt="">
+                                        </li>
+                                        <li>
+                                             <img src="~/Content/Asset/lib_binh/img/color/purple.jpg" alt="">
+                                        </li>
+                                   </ul>
+                                   <p class="prod-skuttl">Sizes</p>
+                                   <div class="offer-props-select">
+                                        <p>XL</p>
+                                        <ul>
+                                             <li><a href="#">XS</a></li>
+                                             <li><a href="#">S</a></li>
+                                             <li><a href="#">M</a></li>
+                                             <li class="active"><a href="#">XL</a></li>
+                                             <li><a href="#">L</a></li>
+                                             <li><a href="#">4XL</a></li>
+                                             <li><a href="#">XXL</a></li>
+                                        </ul>
+                                   </div>
+                              </div>
+                              <div class="prod-info">
+                                   <p class="prod-price">
+                                        <b class="item_current_price">$238</b>
+                                   </p>
+                                   <p class="prod-qnt">
+                                        <input type="text" value="1">
+                                        <a href="#" class="prod-plus"><i class="fa fa-angle-up"></i></a>
+                                        <a href="#" class="prod-minus"><i class="fa fa-angle-down"></i></a>
+                                   </p>
+                                   <p class="prod-addwrap">
+                                        <a href="#" class="prod-add">Add to cart</a>
+                                   </p>
+                              </div>
+                              <ul class="prod-i-props">
+                                   <li>
+                                        <b>SKU</b> 05464207
+                                   </li>
+                                   <li>
+                                        <b>Manufacturer</b> Mayoral
+                                   </li>
+                                   <li>
+                                        <b>Material</b> Cotton
+                                   </li>
+                                   <li>
+                                        <b>Pattern Type</b> Print
+                                   </li>
+                                   <li>
+                                        <b>Wash</b> Colored
+                                   </li>
+                                   <li>
+                                        <b>Style</b> Cute
+                                   </li>
+                                   <li>
+                                        <b>Color</b> Blue, Red
+                                   </li>
+                                   <li><a href="#" class="prod-showprops">All Features</a></li>
+                              </ul>
+                         </div>
+                    </div>
+               </div>
+               <!-- Quick View Product - end -->
+          </section>
+     </main>

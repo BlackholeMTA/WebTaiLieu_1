@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS ~/Public/lib -->
+    <link rel="stylesheet" href="~/Areas/Admin/Public/css/reset.css">
+    <link rel="stylesheet" href="~/Areas/Admin/Public/css/global.css">
+    <link rel="stylesheet" href="~/Areas/Admin/Public/css/menu.css">
+    <link rel="stylesheet" href="~/Areas/Admin/Public/css/sidebar.css">
+    <link rel="stylesheet" href="~/Areas/Admin/Public/css/add_cat.css">
+    <link rel="stylesheet" href="~/Areas/Admin/Public/css/change_pass.css">
+    <link rel="stylesheet" href="~/Areas/Admin/Public/css/detail_order.css">
+    <link rel="stylesheet" href="~/Areas/Admin/Public/css/info_account.css">
+    <link rel="stylesheet" href="~/Areas/Admin/Public/css/list_post.css">
+    <link rel="stylesheet" href="~/Areas/Admin/Public/css/list_product.css">
+    <!-- Font-Awesome ~/Public/lib -->
+    <link rel="stylesheet" href="~/Content/Asset/lib/Fontawesome/css/all.css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="~/Content/Asset/lib/owlcarousel/~/Public/Assets/owl.carousel.css">
+    <link rel="stylesheet" href="~/Content/Asset/lib/owlcarousel/~/Public/Assets/owl.theme.default.css">
+    <!-- <link rel="stylesheet" href="~/Public/lib/jQuery/jquery 3.5.0.js"> -->
+    <link rel="stylesheet" href="~/Content/Asset/lib/owlcarousel/owl.carousel.js">
+    <!-- Font Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS + JS-->
+    <link rel="stylesheet" href="~/Content/Asset/lib/bootstrap-4.5.0-dist/css/bootstrap.css">
+    <script src="~/Content/Asset/lib/bootstrap-4.5.0-dist/js/jquery 3.5.0.js"></script>
+    <script src="~/Content/Asset/lib/bootstrap-4.5.0-dist/js/popper.min.js"></script>
+    <script src="~/Content/Asset/lib/bootstrap-4.5.0-dist/js/bootstrap.js"></script>
+    <!-- jQuery -->
+
+</head>
+<body>
+    <div id="site" style="font-size:13px">
+        <div id="container">
+            <div id="header-wp">
+                <div class="wp-inner clearfix">
+                    <a href="~/Admin/Home/Index" title="" id="logo" class="fl-left">ADMIN</a>
+                    <ul id="main-menu" class="fl-left">
+                        <li>
+                            <a href="?page=list_post" title="">Trang</a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="?page=add_page" title="">Thêm mới</a>
+                                </li>
+                                <li>
+                                    <a href="?page=list_page" title="">Danh sách trang</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="?page=list_post" title="">Bài viết</a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="?page=add_post" title="">Thêm mới</a>
+                                </li>
+                                <li>
+                                    <a href="?page=list_post" title="">Danh sách bài viết</a>
+                                </li>
+                                <li>
+                                    <a href="?page=list_cat" title="">Danh mục bài viết</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="?page=list_product" title="">Sản phẩm</a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="?page=add_product" title="">Thêm mới</a>
+                                </li>
+                                <li>
+                                    <a href="?page=list_product" title="">Danh sách sản phẩm</a>
+                                </li>
+                                <li>
+                                    <a href="?page=list_cat" title="">Danh mục sản phẩm</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" title="">Bán hàng</a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="?page=list_order" title="">Danh sách đơn hàng</a>
+                                </li>
+                                <li>
+                                    <a href="?page=list_order" title="">Danh sách khách hàng</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="" title="">Menu</a>
+                        </li>
+                    </ul>
+                    <div id="dropdown-user" class="dropdown dropdown-extended fl-right">
+                        <button class="dropdown-toggle clearfix" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <div id="thumb-circle" class="fl-left">
+                                <img src="~/Content/Asset/image/img-admin.png">
+                            </div>
+                            <h3 id="account" class="fl-right"></h3>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/Admin/Home/ChangePass" title="Thông tin cá nhân">Đổi mật khẩu</a></li>
+                            <li><a href="~/Admin/Login/Logout" title="Thoát">Thoát</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="main-content-wp" class="list-post-page">
+                <div class="wrap clearfix">
+                    @Html.Partial("sidebar")
+                    <div>
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+            <div id="footer-wp">
+                <div class="wp-inner">
+                    <p id="copyright">2021 © Admin Theme by ASP.net Master</p>
+                </div>
+            </div>
+        </div>
+            </div>
+</body>
+</html>

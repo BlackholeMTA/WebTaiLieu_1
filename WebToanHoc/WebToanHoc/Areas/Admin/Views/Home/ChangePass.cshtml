@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "ChangePass";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPageAdmin.cshtml";
+}
+
+    
+            <div id="content" class="fl-right">
+                <div class="section" id="detail-page">
+                    <div class="section-detail">
+                        <p style="color:green; font-size:18px">@ViewBag.Success</p>
+                        <form method="post">
+                            @Html.AntiForgeryToken()
+                            <div class="form-group">
+                                <label for="pass_old">Mật khẩu cũ</label>
+                                <input type="password" name="pass_old" id="pass_old" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="pass_new">Mật khẩu mới</label>
+                                <input type="password" name="pass_new" id="pass_new" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="repass_new">Xác nhận mật khẩu</label>
+                                <input type="password" name="repass_new" id="repass_new" class="form-control">
+                            </div>
+                            <p style="color:red">@ViewBag.Error</p>
+                            <input class="btn btn-success" id="button" type="submit" name="btn_update_pass" value="Cập nhật">
+                        </form>
+                    </div>
+                </div>
+            </div>
+       
+
