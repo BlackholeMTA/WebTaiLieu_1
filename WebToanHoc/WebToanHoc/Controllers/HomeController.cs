@@ -14,13 +14,13 @@ namespace WebToanHoc.Controllers
           public ActionResult Index()
           {
                //lấy hết danh sách các tài liệu ở Bài đăng mới nhất
-               var list_document = db.tbl_file.Where(x => x.status == 1).OrderByDescending(x=>x.time_up).ToList().Take(12);
+               var list_document = db.tbl_file.Where(x => x.status == 1 && x.id_cate >= 1 && x.id_cate <= 8).OrderByDescending(x=>x.time_up).ToList().Take(12);
                ViewBag.list_document = list_document;
                //lấy danh sách các tài liệu cấp 2
                ViewBag.list_document_grade2= db.tbl_file.Where(x => x.status == 1 && x.id_cate>=1 && x.id_cate<=4).OrderByDescending(x => x.time_up).ToList().Take(12);
                ViewBag.list_document_grade3 = db.tbl_file.Where(x => x.status == 1 && x.id_cate >= 5 && x.id_cate <= 7).OrderByDescending(x => x.time_up).ToList().Take(12);
                ViewBag.list_document_grade4 = db.tbl_file.Where(x => x.status == 1 && x.id_cate ==8).OrderByDescending(x => x.time_up).ToList().Take(12);//sửa 
-               ViewBag.list_download=db.tbl_file.Where(x=>x.status==1).OrderByDescending(x => x.num_view).ToList().Take(6);
+               ViewBag.list_download=db.tbl_file.Where(x=>x.status==1 && x.id_cate >= 1 && x.id_cate <= 8).OrderByDescending(x => x.num_view).ToList().Take(6);
                return View();
           }
           public ActionResult Category_Document(int id)
